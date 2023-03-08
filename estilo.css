@@ -1,0 +1,380 @@
+:root{
+    --fuentePrincipal: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    --fuenteSecundaria: 'Staatliches', cursive;
+    --colorPrincipal: #5f274d;
+    --colorSecundario: #8a7090;
+    --colorTerciario: #5268c7;
+    --blanco: #fff1f1;
+    --negro: #0a0a0a;
+
+}
+/*globales */
+html{
+
+    font-size: 62.5%; /* 1rem = 10px */
+    box-sizing: border-box; /*hack box model*/
+    scroll-snap-type: y mandatory;
+
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+    padding: 0%;
+    margin: 0%;
+    text-decoration: none;
+}
+body{
+    
+}
+
+/**#btnScrollToTop{
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    height: 7rem;
+    width: 7rem;
+    background-color: var(--colorPrincipal);
+    border: none;
+    border-radius: 10rem;
+}
+#btnScrollToTop:hover{
+    background-color: #83356a;
+}
+**/
+
+/**.to-top.active{
+    bottom: 3.2rem;
+} **/
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+  }
+/**Parte Superior**/
+
+header{
+    display: block;
+    text-align: center; 
+    font-family: var(--fuentePrincipal); 
+    background-color: var(--negro);
+    padding: 2rem;
+    color: var(--blanco);
+}
+
+header h1{
+    font-size: 4rem;
+}
+
+header span{
+    font-size: 3rem;
+}
+
+@media (max-width: 350px){
+    header{
+        padding: 2rem;
+        display: block;
+    }
+
+    header h1{
+        font-size: 3.5rem;  
+        
+    }
+    
+    header span{
+        font-size: 3rem;
+    }
+
+}
+
+/** Menu de Navegacion **/
+.nav-bg {
+    background-color: var(--colorPrincipal);
+    
+}
+.Menu{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 2rem;   
+    padding: 1rem;    
+    text-align: center;
+    
+}
+.Menu a{
+    text-decoration: none;
+    color: var(--blanco);
+    padding: .5rem;
+}
+.Menu a:hover{
+    background-color: var(--colorSecundario);
+}
+
+@media (max-width:600px){
+    .Menu{
+        flex-direction: column;
+    }   
+    .Menu a{
+        padding: .2rem;
+    }
+}
+
+/** Imagen Presentacion **/
+.hero{
+    background-image: url(Img/Yo\ Estrada\ Edit.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    position: relative; 
+    height: 35rem;
+}
+/** Responsive**/
+@media (max-width:694px){
+    .hero{
+        height: 40rem;
+        background-position: center center;
+    }
+}
+@media (max-width:376px){
+    .hero{
+        height: 45rem;
+    }
+}
+@media (max-width:292px){
+    .hero{
+        height: 50rem;
+    }
+}
+/**Desarrollo Web & Prod Musical **/
+.contenido-hero{
+    color: var(--blanco);
+    text-align: center;
+    font-size: 10rem;   
+    background-color: rgba(0, 0, 0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:1.3rem;
+}
+
+.contenido-hero h2{
+    font-size: 4rem;
+    padding-top: 2rem;
+    font-family: var(--fuentePrincipal);
+}
+
+.contenido-hero p{
+    font-size: 2.5rem;
+    height: 6rem;
+}
+
+.contenido-hero a{
+    font-size: 1.8rem;
+    font-family: var(--fuenteSecundaria);
+    text-decoration: none;
+    background-color: var(--colorTerciario);
+    color: var(--blanco);
+    padding: .8rem;
+    border-radius: .6rem;
+    text-transform:uppercase;
+    font-family: var(--fuentePrincipal);
+    text-transform: uppercase;
+}
+
+.contenido-hero a:hover{
+    background-color: #002fff;
+}
+/** Sobre Mi **/
+.sobre-mi{
+    font-size: 2rem;
+    text-align: center;
+    margin: 3rem;
+    border: solid 0.2rem var(--negro);
+}
+
+/**.Educacion {
+    font-size: 25px;
+    background-color: #8a7090;
+    color: #ffff;
+    height: 250px;
+    margin: 2px;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid black;
+    font-size: 25px;
+}**/
+/**
+.Aptitudes {
+
+    background-color: #8a7090;
+    color: #fff;
+    margin: 2px;
+    padding: 30px;
+    border: 2px solid black;
+    font-size: 25px;
+}
+**/
+
+/** Contenedor producciones**/
+.contenedor{
+    font-family: var(--fuenteSecundaria);
+    letter-spacing: .5rem;
+    text-transform:lowercase;
+    padding: 3rem;
+}
+
+.contenedor h1{
+    text-align: center;
+}
+/** grid Prod Musicales**/ 
+.grid{
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 768px){
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+ }
+
+ /** producciones **/ 
+.portfolio h2{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+ .produccion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ .produccion img{
+    height: 30rem;
+    padding: 3rem;
+    transition: height 0.5s;
+}
+
+.produccion a img{
+    display: flex;
+    align-items: center;
+}
+.produccion img:hover{
+    height: 40rem;
+}
+
+@media (max-width: 768px){
+    .produccion img{
+        height: 30rem;
+        padding: 3rem;
+        transition: none;
+    }
+    .produccion img:hover{
+        height: 30rem;
+    }
+}
+
+.produccion__nombre, .produccion__artista{
+    text-align:center;
+    font-size: 1.5rem;
+}
+
+/** Contacto **/
+.Contacto {
+    background-color: var(--negro);
+    color: rgb(255, 255, 255);
+    font-family: var(--fuenteSecundaria);
+    letter-spacing: .2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  
+}
+.Form{
+
+    
+}
+.boton{
+    align-items: center;
+    margin-right: 2rem;
+    color: #fff1f1;
+}
+.boton:hover{
+    color: var(--colorPrincipal);
+}
+
+.contenedor-campos{
+    font-size: 2rem;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width:436px) {
+    .contenedor-campos{
+        justify-content: left;
+    }
+}
+
+.campo{
+    margin-bottom: 0.3rem;
+}
+
+.campo textarea{
+    height: 20rem;
+    width: 30%;
+    overflow: auto;
+}
+
+.input-text{
+    width: 20%;
+}
+
+.enviar input {
+    font-size: 2rem;
+    color: var(--negro); 
+    font-family: var(--fuentePrincipal);
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+    width: 15%;
+}
+
+.enviar input:hover{
+    background-color: var(--colorPrincipal);
+    color: var(--blanco);
+}
+
+@media (max-width: 768px){
+    .enviar{
+        width: 50rem;
+    }
+
+}
+
+.Mapa {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--colorPrincipal);
+    color: #bbb;
+   /** margin-bottom: 20px;**/
+}
+
+.Mapa h1{
+    font-family: var(--fuenteSecundaria);
+    letter-spacing: .3rem;
+}
+
+.ubicacionReal {
+    width: 80%;
+    height: 180px;
+    margin-bottom: 4rem;
+    padding: .5rem;
+}
+
+footer {
+    background-color: var(--negro);
+    color: #ffff;
+    font-size: 15px;
+    text-align: end;
+}
